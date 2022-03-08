@@ -1,20 +1,16 @@
 package com;
 
-import java.util.Scanner;
-
 public class SavingsAccount {
     public static float annualInterestRate;
     private float savingsBalance;
-    public final String name;
 
     /**
      * Constructor for class SavingsAccount to create object
      * @param savingsBalance - amount which the account need to create with.
      */
-    SavingsAccount(float savingsBalance, String name){
+    SavingsAccount(float savingsBalance){
         setSavingsBalance(savingsBalance);
         setAnnualInterestRate(savingsBalance);
-        this.name = name;
     }
 
     /**
@@ -70,21 +66,11 @@ public class SavingsAccount {
     }
 
     /**
-     * modifyInterestRate - method to read interest rate from user and update it
-     * for calculating interest in the month
+     * modifyInterestRate - method to update new Interest rate
      */
-    public static void modifyInterestRate(){
-        /*
-        New interest rate got from user and annual interest rate is updated in class
-         */
-        Scanner input = new Scanner(System.in);
-        System.out.print("Enter Annual interest rate for the month: ");
-        float newInterestRate = input.nextFloat();
-
+    public static void modifyInterestRate(float newInterestRate){
         setAnnualInterestRate(newInterestRate);
 
-        System.out.println("Interest rate for the month is set to " + SavingsAccount.getAnnualInterestRate() + "%.");
-        input.close();
     }
 
 }
